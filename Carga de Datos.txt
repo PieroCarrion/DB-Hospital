@@ -1,0 +1,256 @@
+
+-------Tabla Especialidad-------------
+insert into EspecialidadPersonal(idEspecialidad,descripcionEspecialidad)values('KW158','Odontología');
+insert into EspecialidadPersonal(idEspecialidad,descripcionEspecialidad)values('OT891','Otorrinolaringologia');
+insert into EspecialidadPersonal(idEspecialidad,descripcionEspecialidad)values('PS320','Psicología');
+insert into EspecialidadPersonal(idEspecialidad,descripcionEspecialidad)values('MG520','Medicina General');
+insert into EspecialidadPersonal values('XS23','Farmaceutico');
+-----------Tabla EstadoPersonal---------
+insert into EstadoPersonal(idEstadoPersonal,descripcionEstadoPersonal)values('1245K','Activo');
+insert into EstadoPersonal(idEstadoPersonal,descripcionEstadoPersonal)values('1485G','Inactivo');
+insert into EstadoPersonal(idEstadoPersonal,descripcionEstadoPersonal)values('0485G','Inactivo');
+insert into EstadoPersonal(idEstadoPersonal,descripcionEstadoPersonal)values('0385R','Activo');
+------------Tabla Personal------------------
+insert into Personal(idPersonal,nombrePersonal,telefonoPersonal,telefonoEmergencia,emailPersonal,fechaNacimiento,clavePersonal,idEspecialidad,idEstadoPersonal)
+values('74523698','Lisseth Gonzalez Peralta','922633874','987654321','lisgo12@hotmail.com','1990/05/05','LISGO-001','MG520','0385R');
+insert into Personal(idPersonal,nombrePersonal,telefonoPersonal,telefonoEmergencia,emailPersonal,fechaNacimiento,clavePersonal,idEspecialidad,idEstadoPersonal)
+values('15933698','Pilar Castro Perez','951867834','920365421','Pilar88@hotmail.com','1980/12/20','PICA-003','PS320','1245K');
+insert into Personal(idPersonal,nombrePersonal,telefonoPersonal,telefonoEmergencia,emailPersonal,fechaNacimiento,clavePersonal,idEspecialidad,idEstadoPersonal)
+values('05923698','Pedro Aramburu Castro','924567834','938765421','Pedro12@hotmail.com','1980/12/12','PEAR-002','PS320','1245K');
+insert into Personal(idPersonal,nombrePersonal,telefonoPersonal,telefonoEmergencia,emailPersonal,fechaNacimiento,clavePersonal,idEspecialidad,idEstadoPersonal)
+values('09736523','Krillin Huapaya Clemensex','987654834','931235421','Krill@hotmail.com','1980/10/29','KRHU-008','OT891','1245K');
+insert into Personal(idPersonal,nombrePersonal,telefonoPersonal,telefonoEmergencia,emailPersonal,fechaNacimiento,clavePersonal,idEspecialidad,idEstadoPersonal)
+values('74512234','Juan Carlos Gonzales','923787283','987344241','juanCarlosH@hotmail.com','1980/03/15','JUCA-001','XS23','0385R');
+-----------------Tabla Paciente------------
+ insert into Paciente (idPaciente,nombrePaciente,apellidoPaterno,apellidoMaterno,direccionPaciente,fechaNacimiento ,fechaDefunsion, telefono, genero,talla, peso,clavePaciente)
+ values ('78452363','Richard Antonio','Espinoza','Zarate','Av.Los Pinos-Los Flores-Los Olivos-Lima-Peru','1998/05/18' ,NULL,'952163547','Masculino','1.69','78','LORIAN98-001');
+ insert into Paciente (idPaciente,nombrePaciente,apellidoPaterno,apellidoMaterno,direccionPaciente,fechaNacimiento ,fechaDefunsion, telefono, genero,talla, peso,clavePaciente)
+ values ('10845223','Graciela ','Torres','Ugarte','Av.Alfonso Ugarte-Cercado de Lima-Lima-Peru','1972/08/01' ,NULL,'948529631','Femenino','1.56','50','CLGR72-002');
+ insert into Paciente (idPaciente,nombrePaciente,apellidoPaterno,apellidoMaterno,direccionPaciente,fechaNacimiento ,fechaDefunsion, telefono, genero,talla, peso,clavePaciente)
+ values ('10434611','Gianina Lucero','Ugarte','Torres','Av.Faucett-Callao-Lima-Peru','1972/04/02' ,NULL,'948529631','Femenino','1.57','55','CAGILU72-003');
+ insert into Paciente (idPaciente,nombrePaciente,apellidoPaterno,apellidoMaterno,direccionPaciente,fechaNacimiento ,fechaDefunsion, telefono, genero,talla, peso,clavePaciente)
+ values ('09893036','Carlos Cesar','Hernadez','Falcon','Av.Dominicos-San Martin de Pores-Lima-Peru','1963/08/12' ,NULL,'948529631','Masculino','1.81','69','SMPCACE63-003');
+ ------------Tabla Receta Medica----------
+insert into RecetaMedica(idRecetaMedica,idPaciente,idPersonal)values('JKF324','10845223','09736523');
+insert into RecetaMedica(idRecetaMedica,idPaciente,idPersonal)values('RTE559','10434611','74523698');
+insert into RecetaMedica(idRecetaMedica,idPaciente,idPersonal)values('AAT001','09893036','15933698');
+insert into RecetaMedica(idRecetaMedica,idPaciente,idPersonal)values('AMH029','78452363','05923698');
+--------- EstadoMedicamento----------
+insert into EstadoMedicamento(idEstadoMedicamento, descripcionEstadoMedicamento)values('V001','Vigente');
+insert into EstadoMedicamento(idEstadoMedicamento, descripcionEstadoMedicamento)values('NV001','Caducado');
+insert into EstadoMedicamento(idEstadoMedicamento, descripcionEstadoMedicamento)values('IS001','Insuficiente');
+-------tabla Medicamento--------
+insert into Medicamento VALUES('MDCMT1','Naproxeno','Apronax',23,'NV001');
+insert into Medicamento VALUES('MDCMT12','Cetiricina',null,433,'IS001');
+insert into Medicamento VALUES('MDCMT52','Paracetamol',null,433,'V001');
+insert into Medicamento VALUES('MDCMT8','Ibuprofeno','Ibunax',568,'NV001');
+------tabla RecetaMedicaMedicamento------
+insert into recetaMedicaMedicamento(idRecetaMedica,idMedicamento,cantidad,descripcion)values('RTE559','MDCMT52','1','Se recetó 1 pastilla' );
+insert into recetaMedicaMedicamento(idRecetaMedica,idMedicamento,cantidad,descripcion)values('JKF324','MDCMT1','4','Se recetó 4 pastillas');
+insert into recetaMedicaMedicamento(idRecetaMedica,idMedicamento,cantidad,descripcion)values('AMH029','MDCMT8','6','Se recetó 6 pastillas');
+insert into recetaMedicaMedicamento(idRecetaMedica,idMedicamento,cantidad,descripcion)values('AMH029','MDCMT1','2','Se recetó 4 pastillas');
+-----------------Tabla PersonaC------
+insert into PersonaContacto(idPersonaContacto,nombre,apellidoPaterno,apellidoMaterno,telefono,email)
+values ('72649024','Rodrigo Alonso','Reaño','Evangelista','945186203','elpapi@gmail.com');
+insert into PersonaContacto(idPersonaContacto,nombre,apellidoPaterno,apellidoMaterno,telefono,email)
+values ('72649026','Fabrizio','Reaño','Evangelista','948563214','elchipi@gmail.com');
+insert into PersonaContacto(idPersonaContacto,nombre,apellidoPaterno,apellidoMaterno,telefono,email)
+values ('73245625','Xnejder','Huamani','Castillo','948661214','xnejhuamani@gmail.com');
+insert into PersonaContacto(idPersonaContacto,nombre,apellidoPaterno,apellidoMaterno,telefono,email)
+values ('08925625','Sandra','Ramirez','Castillo','948660056','sanraca@gmail.com');
+---------------Tabla Proveedor----------
+insert into Proveedor(idProveedor,nombre,direccion,telefono,email,idPersonaContacto)
+values('201548794603151','JasperMed SA.','Av.Javier Prado 914-Magdalena','966632145','jaspermed@hotmail.com','72649026');
+insert into Proveedor(idProveedor,nombre,direccion,telefono,email,idPersonaContacto)
+values('563214789563214','KingsLab SA.','Av. La Marina 219-San Miguel','952233415','kingslab@hotmail.com','08925625');
+insert into Proveedor(idProveedor,nombre,direccion,telefono,email,idPersonaContacto)
+values('032156478953014','LabMedPeru SA.','Av. Alfonso Ugarte 305-Cercado','979451623','labmed_peru@gmail.com','72649024');
+insert into Proveedor(idProveedor,nombre,direccion,telefono,email,idPersonaContacto)
+values('032615487916563','SystemMedical SA.','Av.Tomas Valle 815-San Martin','999076233','system_medical@hotmail.com','73245625');
+-------Tabla MedicamentoProveedor---------
+insert into MedicamentoProveedor(idMedicamentoProveedor,stock,lote,fechaVencimiento,idMedicamento,idProveedor)
+values('MEDPR1','45','4','2020/02/02','MDCMT1','032156478953014');
+insert into MedicamentoProveedor(idMedicamentoProveedor,stock,lote,fechaVencimiento,idMedicamento,idProveedor)
+values('MEDPR2','10','2','2019/12/02','MDCMT12','032615487916563');
+insert into MedicamentoProveedor(idMedicamentoProveedor,stock,lote,fechaVencimiento,idMedicamento,idProveedor)
+values('MEDPR3','15','2','2020/02/02','MDCMT52','201548794603151');
+insert into MedicamentoProveedor(idMedicamentoProveedor,stock,lote,fechaVencimiento,idMedicamento,idProveedor)
+values('MEDPR4','80','4','2020/02/02','MDCMT8','563214789563214');
+------Tabla Componente--------
+insert into Componente(idComponente,nombreComponente,descripcion)values('CMP1','Magnesio','Componente de Esterato de magnesio');
+insert into Componente(idComponente,nombreComponente,descripcion)values('CMP2','Povidona',null);
+insert into Componente(idComponente,nombreComponente,descripcion)values('CMP3','Acido estearico',null);
+insert into Componente(idComponente,nombreComponente,descripcion)values('CMP4',null,null);
+-------Tabla Componente medicamento------
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP1','MDCMT1','50');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP2','MDCMT12','16');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP3','MDCMT52','10');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP4','MDCMT8','0');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP1','MDCMT8','4');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP2','MDCMT8','10');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP1','MDCMT52','30');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP4','MDCMT12','29');
+insert into ComponenteMedicamento(idComponente,idMedicamento,cantidad)values('CMP1','MDCMT12','1');
+--------Tabla Presentacion------
+insert into Presentacion(idPresentacion,nombrePresentacion, cantidad)values('P156S','Pastillas',80);
+insert into Presentacion(idPresentacion,nombrePresentacion, cantidad)values('I001Y','Inyectable',10);
+insert into Presentacion(idPresentacion,nombrePresentacion, cantidad)values('J123S','Jarabe',15);
+insert into Presentacion(idPresentacion,nombrePresentacion, cantidad)values('G456A','Gasa',45);
+-------Tabla Presentacion Medicamento----
+insert into medicamentoPresentacion(idMedicamento,idPresentacion)values('MDCMT1','P156S');
+insert into medicamentoPresentacion(idMedicamento,idPresentacion)values('MDCMT12','P156S');
+insert into medicamentoPresentacion(idMedicamento,idPresentacion)values('MDCMT52','P156S');
+insert into medicamentoPresentacion(idMedicamento,idPresentacion)values('MDCMT8','J123S');
+---------Tabla Habitacion----
+ insert into Habitacion (nroHabitacion,cantidadCamas) values('305', 16);
+  insert into Habitacion(nroHabitacion,cantidadCamas) values('201',10);
+  insert into Habitacion(nroHabitacion,cantidadCamas) values('101',6);
+  insert into Habitacion(nroHabitacion,cantidadCamas) values('511',20);
+ ----- Tabla EstadoCama----
+  insert into estadoCama (idEstadoCama,descripcionEstadoCama) values ('0001', 'En uso');
+ insert into estadoCama (idEstadoCama,descripcionEstadoCama) values ('0002', 'En uso');
+ insert into estadoCama (idEstadoCama,descripcionEstadoCama) values ('0003', 'Sin uso');
+ insert into estadoCama (idEstadoCama,descripcionEstadoCama) values ('0004', 'En uso');
+ -----------Tabla Cama----
+ insert into Cama(idCama,nroCama,nroHabitacion,idEstadoCama)values('CM1','8','305','0002');
+insert into Cama(idCama,nroCama,nroHabitacion,idEstadoCama)values('CM2','4','101','0002');
+insert into Cama(idCama,nroCama,nroHabitacion,idEstadoCama)values('CM3','16','305','0003');
+insert into Cama(idCama,nroCama,nroHabitacion,idEstadoCama)values('CM4','11','511','0003');
+------Tabla EstadoHospit------
+insert into EstadoHospitalizacion values('EH001','Paciente en cama');
+insert into EstadoHospitalizacion values('EH002','Atencion las 24 hrs');
+insert into EstadoHospitalizacion values('EH003','DE ALTA');
+------Tabla Hospitalizacion------
+insert into Hospitalizacion
+(idHospitalizacion,fechaEntrada,horaEntrada,fechaSalida,horaSalida,idCama,idPaciente,idEstadoHospitalizacion)
+values('Hosp1','2019/05/19','16:59','2019/05/20','09:10','CM1','09893036','EH001');
+insert into Hospitalizacion
+(idHospitalizacion,fechaEntrada,horaEntrada,fechaSalida,horaSalida,idCama,idPaciente,idEstadoHospitalizacion)
+values('Hosp2','2018/04/20','09:20','2018/04/20','19:25','CM2','10434611','EH002');
+insert into Hospitalizacion
+(idHospitalizacion,fechaEntrada,horaEntrada,fechaSalida,horaSalida,idCama,idPaciente,idEstadoHospitalizacion)
+values('Hosp3','2018/03/18','12:12','2018/04/01','20:00','CM3','10845223','EH003');
+insert into Hospitalizacion
+(idHospitalizacion,fechaEntrada,horaEntrada,fechaSalida,horaSalida,idCama,idPaciente,idEstadoHospitalizacion)
+values('Hosp4','2019/06/25','10:26','2019/06/30','11:56','CM4','78452363','EH002');
+-------Procedimiento----
+insert into Procedimiento
+(idProcedimiento,nombreProcedimiento,descripcionProcedimiento)
+values('Prtcl1','Herido de bala','El paciente recibió un impacto de bala al promediar las 15:56pm');
+insert into Procedimiento
+(idProcedimiento,nombreProcedimiento,descripcionProcedimiento)
+values('Prtcl2','Defuncion','El paciente falleció al promediar las 13:25pm del sábado 28 de noviembre');
+insert into Procedimiento
+(idProcedimiento,nombreProcedimiento,descripcionProcedimiento)
+values('Prtcl3','Derrame Cerebral','El paciente sufrío de un derrame cerebral cuando cursaban las 20:35pm');
+insert into Procedimiento
+(idProcedimiento,nombreProcedimiento,descripcionProcedimiento)
+values('Prtcl4','Ataque de Asma','El paciente sufrío un ataque de asma al promediar las 03:20am');
+------------Tabla controlHospitalizacion------
+insert into controlHospitalizacion(idControlHospitalizacion,idProcedimiento,idHospitalizacion)values('ConHos1','Prtcl1','Hosp1');
+insert into controlHospitalizacion(idControlHospitalizacion,idProcedimiento,idHospitalizacion)values('ConHos2','Prtcl3','Hosp2');
+insert into controlHospitalizacion(idControlHospitalizacion,idProcedimiento,idHospitalizacion)values('ConHos3','Prtcl1','Hosp3');
+insert into controlHospitalizacion(idControlHospitalizacion,idProcedimiento,idHospitalizacion)values('ConHos4','Prtcl4','Hosp4');
+--------------tabla controlHospitalizacionPersonal----
+insert into controlHospitalizacionPersonal(idControlHospitalizacion,idPersonal)values('ConHos2','74523698');
+insert into controlHospitalizacionPersonal(idControlHospitalizacion,idPersonal)values('ConHos3','05923698');
+insert into controlHospitalizacionPersonal(idControlHospitalizacion,idPersonal)values('ConHos4','74523698');
+insert into controlHospitalizacionPersonal(idControlHospitalizacion,idPersonal)values('ConHos1','74523698');
+------------Tabla Urgencia---
+insert into Urgencia (idUrgencia,horaUrgencia,fechaUrgencia,idPaciente) values('U001','18:26','2018/06/15','78452363');
+  insert into Urgencia (idUrgencia,horaUrgencia,fechaUrgencia,idPaciente) values('U002','20:16','2016/05/30','10434611');
+  insert into Urgencia (idUrgencia,horaUrgencia,fechaUrgencia,idPaciente) values('U003','09:57','2015/12/05','10845223');
+  insert into Urgencia (idUrgencia,horaUrgencia,fechaUrgencia,idPaciente) values('U004','06:15','2016/05/06','09893036');
+ -----------Tabla urgenciaProcedimiento----
+ insert into urgenciaProcedimiento(idUrgencia,idProcedimiento)values('U002','Prtcl4');
+insert into urgenciaProcedimiento(idUrgencia,idProcedimiento)values('U001','Prtcl4');
+insert into urgenciaProcedimiento(idUrgencia,idProcedimiento)values('U004','Prtcl2');
+insert into urgenciaProcedimiento(idUrgencia,idProcedimiento)values('U003','Prtcl1');
+-----------Tabla Urgencia Personal----
+insert into urgenciaPersonal(idUrgencia,idPersonal)VALUES('U003','15933698');
+insert into urgenciaPersonal(idUrgencia,idPersonal)VALUES('U004','74523698');
+insert into urgenciaPersonal(idUrgencia,idPersonal)VALUES('U001','74523698');
+insert into urgenciaPersonal(idUrgencia,idPersonal)VALUES('U002','05923698');
+--------Tabla tipo cita---
+insert into TipoCita(idTipoCita,descripcionTipoCita)values('Cita2','La cita será realizada el dia Jueves a las 15:26pm con el psicologo');
+insert into TipoCita(idTipoCita,descripcionTipoCita)values('Cita3','La cita será realizada el dia Jueves a las 17:30pm en Odontología');
+insert into TipoCita(idTipoCita,descripcionTipoCita)values('Cita1','La cita será realizada el dia Sábado a las 09:26am en Medicina General');
+insert into TipoCita(idTipoCita,descripcionTipoCita)values('Cita4',null);
+-------Tabla EstadoCita----
+insert into EstadoCita(idEstadoCita,descripcionEstadoCita)values('EC01','Activa');
+insert into EstadoCita(idEstadoCita,descripcionEstadoCita)values('EC02','Aprobada');
+insert into EstadoCita(idEstadoCita,descripcionEstadoCita)values('EC03','Desaprobada');
+insert into EstadoCita(idEstadoCita,descripcionEstadoCita)values('EC04','Cancelada');
+--------Tabla EstadoConsultorio----
+insert into EstadoConsultorio(idEstadoConsultorio,descripcionEstado)VALUES('ECST1','Disponible');
+insert into EstadoConsultorio(idEstadoConsultorio,descripcionEstado)VALUES('ECST2','No disponible');
+---------Tabla consultorio--
+insert into Consultorio(idConsultorio,salon,piso,descripcionConsultorio,idEstadoConsultorio)
+values('CNSLTR1','6','3','Consultorio orientado a Odontologia','ECST1');
+insert into Consultorio(idConsultorio,salon,piso,descripcionConsultorio,idEstadoConsultorio)
+values('CNSLTR2','1','5','Consultorio orientado a Medicina','ECST2');
+insert into Consultorio(idConsultorio,salon,piso,descripcionConsultorio,idEstadoConsultorio)
+values('CNSLTR3','7','2','Consultorio orientado a Psicologia','ECST1');
+insert into Consultorio(idConsultorio,salon,piso,descripcionConsultorio,idEstadoConsultorio)
+values('CNSLTR4','8','1','Consultorio orientado a Otorrinolaringologia','ECST1');
+-------Tabla conclusionCita---
+insert into ConclusionCita(idConclusionCita,descripcionConclusion,fechaConclusion)
+values('ConCit1','El paciente fue diagnosticado con Conducta Semi-Ezquizofrenica','2018/06/19');
+insert into ConclusionCita(idConclusionCita,descripcionConclusion,fechaConclusion)
+values('ConCit2','El paciente fue diagnosticado con dolor de huesos','2018/06/19');
+insert into ConclusionCita(idConclusionCita,descripcionConclusion,fechaConclusion)
+values('ConCit3','El paciente fue diagnosticado con Conducta Semi-Ezquizofrenica ','2018/10/09');
+insert into ConclusionCita(idConclusionCita,descripcionConclusion,fechaConclusion)
+values('ConCit4','El paciente fue diagnosticado con dolor de garganta','2018/01/11');
+----------------------Tabla Cita------------
+insert into Cita(idCita,fecha_Cita,idPaciente,idPersonal,idEstadoCita,idConsultorio,idConclusionCita,idTipoCita)
+values('C001','2018/05/03','78452363','15933698','EC02','CNSLTR3','ConCit1','Cita2');
+insert into Cita(idCita,fecha_Cita,idPaciente,idPersonal,idEstadoCita,idConsultorio,idConclusionCita,idTipoCita)
+values('C002','2018/05/03','10845223','74523698','EC03','CNSLTR2','ConCit2','Cita1');
+insert into Cita(idCita,fecha_Cita,idPaciente,idPersonal,idEstadoCita,idConsultorio,idConclusionCita,idTipoCita)
+values('C003','2018/05/03','10434611','15933698','EC04','CNSLTR3','ConCit3','Cita2');
+insert into Cita(idCita,fecha_Cita,idPaciente,idPersonal,idEstadoCita,idConsultorio,idConclusionCita,idTipoCita)
+values('C004','2018/05/03','09893036','09736523','EC04','CNSLTR1','ConCit4','Cita3');
+-----------Tabla Diagnostico----
+insert into Diagnostico(idDiagnostico,nombreDiagnostico,descripcionDiagnostico)
+values('DIAG1','Esquizofrenia','Se diagnostico esquizofrenia previo a un determinado examen');
+insert into Diagnostico(idDiagnostico,nombreDiagnostico,descripcionDiagnostico)
+values('DIAG2','Descalcificacion de huesos','Se diagnostico baja cantidad de Calcio');
+insert into Diagnostico(idDiagnostico,nombreDiagnostico,descripcionDiagnostico)
+values('DIAG3','Esquizofrenia','Se diagnostico esquizofrenia previo a un determinado examen');
+insert into Diagnostico(idDiagnostico,nombreDiagnostico,descripcionDiagnostico)
+values('DIAG4','Agmidalitis','Se diagnostico baja cantidad de Vitamina C');
+-------Tabla DiagnosticoConclusionCita-----
+insert into DiagnosticoConclusionCita(idDiagnostico,idConclusionCita)values('DIAG1','ConCit1');
+insert into DiagnosticoConclusionCita(idDiagnostico,idConclusionCita)values('DIAG2','ConCit2');
+insert into DiagnosticoConclusionCita(idDiagnostico,idConclusionCita)values('DIAG3','ConCit3');
+insert into DiagnosticoConclusionCita(idDiagnostico,idConclusionCita)values('DIAG4','ConCit4');
+--------Tabla entrada Personal----
+insert into EntradaPersonal(idEntradaPersonal,horaEntrada,fechaEntrada,idPersonal)values('001','06:30','2019/06/17','05923698');
+insert into EntradaPersonal(idEntradaPersonal,horaEntrada,fechaEntrada,idPersonal)values('002','06:45','2019/10/10','09736523');
+insert into EntradaPersonal(idEntradaPersonal,horaEntrada,fechaEntrada,idPersonal)values('003','09:00','2019/12/23','15933698');
+insert into EntradaPersonal(idEntradaPersonal,horaEntrada,fechaEntrada,idPersonal)values('004','10:30','2019/05/06','74523698');
+-------Tabla SalidaPersonal-----
+insert into SalidaPersonal(idSalidaPersonal,horaSalida,fechaSalida,idPersonal)values('001','18:00','02/05/2018','05923698');
+insert into SalidaPersonal(idSalidaPersonal,horaSalida,fechaSalida,idPersonal)values('002','15:00','2016/06/28','09736523');
+insert into SalidaPersonal(idSalidaPersonal,horaSalida,fechaSalida,idPersonal)values('003','17:00','2019/05/20','15933698');
+insert into SalidaPersonal(idSalidaPersonal,horaSalida,fechaSalida,idPersonal)values('004','22:00','2018/03/31','74523698');
+----Tabla Historial Clinico---
+insert into HistorialClinicoPaciente(idHistorialClinicoPaciente,idCita)values('HCP1','C001');
+insert into HistorialClinicoPaciente(idHistorialClinicoPaciente,idCita)values('HCP2','C002');
+insert into HistorialClinicoPaciente(idHistorialClinicoPaciente,idCita)values('HCP3','C003');
+insert into HistorialClinicoPaciente(idHistorialClinicoPaciente,idCita)values('HCP4','C004');
+------Tabla HistorialPersonal--
+insert into HistorialPersonal(idHistorialClinicoPaciente,idPersonal)values('HCP1','05923698');
+insert into HistorialPersonal(idHistorialClinicoPaciente,idPersonal)values('HCP2','09736523');
+insert into HistorialPersonal(idHistorialClinicoPaciente,idPersonal)values('HCP3','15933698');
+insert into HistorialPersonal(idHistorialClinicoPaciente,idPersonal)values('HCP4','74523698');
+------Tabla Pedido--
+insert into Pedido values('XA1','74512234','MDCMT1','032156478953014','73245625','2019/04/30','2019/05/10');
+insert into Pedido values('XA2','74512234','MDCMT12','563214789563214','73245625','2019/06/17','2019/06/20');
+insert into Pedido values('XA4','74512234','MDCMT1','563214789563214','73245625','2019/11/17','2019/11/23');
+------Tabla DetallePedido--
+insert into DetallePedido values('XA1','MDCMT1',160,10.2);
+insert into DetallePedido values('XA2','MDCMT12',420,4.7);
+insert into DetallePedido values('XA4','MDCMT1',550,5.3);
+----Fin----
